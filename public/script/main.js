@@ -41,11 +41,11 @@ window.addEventListener("load", function() {
 	var resultBox = document.querySelector("#result");
 
 	var generateBandName = function() {
-		var firstWord = getRandom(animals);
+		var firstWord = getRandom(animals).toLowerCase();
 		if (Math.random() > 0.25) {
-			var secondWord = getRandom(shapes);
+			var secondWord = getRandom(shapes).toLowerCase();
 		} else {
-			var secondWord = getRandom(otherStuff);
+			var secondWord = getRandom(otherStuff).toLowerCase();
 		}
 		return firstWord + " " + secondWord;
 	};

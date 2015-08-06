@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Josefin+Slab:300,100);
+
 body {
 	margin: 0;
 	font-family: sans-serif;
@@ -64,6 +66,8 @@ body {
 	display: inline-block;
 }
 
-h1 {
-	font-size: 6em;
+#result {
+	font-size: 5em;
+	font-weight: 100;
+	font-family: 'Josefin Slab', serif;
 }
