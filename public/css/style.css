@@ -42,12 +42,12 @@ body {
 #generate {
 	text-shadow: 0 0 30px rgba(0,0,0,0.4);
 	border: none;
-	border-radius: 0;
+	border-radius: 0.2em;
 	margin: 0 0.7em 2em 0.7em;
 	outline: none;
 	background: rgba(80,80,80,0.75);
 	color: #fff;
-	font-size: 1.5em;
+	font-size: 1.2em;
 	padding: 0.5em;
 }
 
@@ -90,10 +90,6 @@ h1 {
 
 	.fb-share-button.fb_iframe_widget.fb_iframe_widget_fluid {
 		display: block;
-	}
-
-	#generate {
-		border-radius: 0.2em;
 	}
 
 	.social-share > * {
