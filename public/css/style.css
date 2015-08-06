@@ -88,6 +88,10 @@ h1 {
 		font-size: 3.5em;
 	}
 
+	#generate {
+		font-size: 1.5em;
+	}
+
 	.fb-share-button.fb_iframe_widget.fb_iframe_widget_fluid {
 		display: block;
 	}
