@@ -20,10 +20,12 @@
 		}(document, 'script', 'facebook-jssdk'));
 	</script>
 
-	<div class="bg-image"></div>
+	<div class="bg-image" style="background-image: url(<%= imgUrl %>)"></div>
 	<div class="container">
 		<h2>Your new band name is:</h2>
-		<div id="result"></div>
+		<div id="result">
+			<h1><%= bandName %></h1>
+		</div>
 		<button id="generate">Generate a new trendy-ass band name</button>
 
 		<div class="social-share">

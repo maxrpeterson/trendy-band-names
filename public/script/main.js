@@ -32,7 +32,6 @@ window.addEventListener("load", function() {
 
 	var getRandom = function(ary) {
 		var randIndex = Math.floor(Math.random() * ary.length);
-		console.log(randIndex);
 		return ary[randIndex];
 	};
 
@@ -73,8 +72,5 @@ window.addEventListener("load", function() {
 	};
 
 	genButton.addEventListener("click", appendBandName);
-
-	appendBandName();
-	randomFlickr();
 
 });
