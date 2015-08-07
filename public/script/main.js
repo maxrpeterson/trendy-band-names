@@ -19,18 +19,15 @@ window.addEventListener("load", function() {
 		return firstWord + " " + secondWord;
 	};
 
-	var randomFlickr = function() {
-		var url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=009a6835cb7e010aaf30d35aa40fe73e&tags=beach%2C+lo-fi%2C+vignette&sort=relevance&per_page=100&format=json&nojsoncallback=1";
+	var randomPhoto = function() {
 		var ajaxGet = new XMLHttpRequest();
 		ajaxGet.onreadystatechange = function() {
 			if (ajaxGet.readyState === 4 && ajaxGet.status === 200) {
-				var responseArray = JSON.parse(ajaxGet.responseText).photos.photo;
-				var randPhoto = responseArray[Math.floor(Math.random() * responseArray.length)];
-				var imgUrl = "https://farm" + randPhoto.farm + ".staticflickr.com/" + randPhoto.server + "/" + randPhoto.id + "_" + randPhoto.secret + "_b.jpg";
+				var imgUrl = JSON.parse(ajaxGet.responseText).imgUrl;
 				bgImage.style.backgroundImage = "url(" + imgUrl + ")"
 			}
 		}
-		ajaxGet.open("GET", url);
+		ajaxGet.open("GET", '/photos.json');
 		ajaxGet.send(null);
 	}
 
@@ -38,7 +35,7 @@ window.addEventListener("load", function() {
 		// e.preventDefault();
 		var bandName = "<h1>" + generateBandName() + "</h1>";
 		resultBox.innerHTML = bandName;
-		randomFlickr();
+		randomPhoto();
 	};
 
 	genButton.addEventListener("click", appendBandName);

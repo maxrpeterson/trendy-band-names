@@ -3,6 +3,8 @@ var app = express();
 var port = process.env.PORT || 3000;
 var request = require('request');
 var words = require('./public/script/words');
+var photos = require('./photos');
+
 
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
@@ -23,12 +25,12 @@ var generateBandName = function() {
 	return firstWord + " " + secondWord;
 };
 
-app.get('/', function(req, res) {
-	request.get("https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=009a6835cb7e010aaf30d35aa40fe73e&tags=beach%2C+lo-fi%2C+vignette&sort=relevance&per_page=100&format=json&nojsoncallback=1", function(err, response, body) {
-		var responseArray = JSON.parse(body).photos.photo;
-		var randPhoto = responseArray[Math.floor(Math.random() * responseArray.length)];
-		var imgUrl = "https://farm" + randPhoto.farm + ".staticflickr.com/" + randPhoto.server + "/" + randPhoto.id + "_" + randPhoto.secret + "_b.jpg";
+app.get('/photos.json', function(req, res) {
+	var randomPhotoUrl = photos.getRandom();
+	var responseObj = {imgUrl: randomPhotoUrl};
+	res.json(responseObj);
+});
 
-		res.render('index.ejs', {imgUrl: imgUrl, bandName: generateBandName()});
-	})
+app.get('/', function(req, res) {
+	res.render('index.ejs', {imgUrl: photos.getRandom(), bandName: generateBandName()});
 });
