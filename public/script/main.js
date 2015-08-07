@@ -1,35 +1,5 @@
 window.addEventListener("load", function() {
 
-	var animals = [
-		"Wolf",
-		"Cat",
-		"Tiger",
-		"Bear",
-		"Penguin",
-		"Lion",
-		"Elk",
-		"Dragon",
-		"Wildcat",
-		"Leopard"
-	];
-
-	var shapes = [
-		"Pyramid",
-		"Triangle",
-		"Circle",
-		"Diamond",
-		"Prism",
-		"Cube"
-	];
-
-	var otherStuff = [
-		"Beach",
-		"Fossils",
-		"Sun",
-		"Palms",
-		"Coast"
-	];
-
 	var getRandom = function(ary) {
 		var randIndex = Math.floor(Math.random() * ary.length);
 		return ary[randIndex];
@@ -40,17 +10,17 @@ window.addEventListener("load", function() {
 	var resultBox = document.querySelector("#result");
 
 	var generateBandName = function() {
-		var firstWord = getRandom(animals).toLowerCase();
+		var firstWord = getRandom(animals);
 		if (Math.random() > 0.25) {
-			var secondWord = getRandom(shapes).toLowerCase();
+			var secondWord = getRandom(shapes);
 		} else {
-			var secondWord = getRandom(otherStuff).toLowerCase();
+			var secondWord = getRandom(otherStuff);
 		}
 		return firstWord + " " + secondWord;
 	};
 
 	var randomFlickr = function() {
-		var url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=49910c2d8cdbaa3b733862122cbed59e&tags=lo-fi%2C+beach%2C+vignette&per_page=50&sort=relevance&format=json&nojsoncallback=1";
+		var url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=009a6835cb7e010aaf30d35aa40fe73e&tags=beach%2C+lo-fi%2C+vignette&sort=relevance&per_page=100&format=json&nojsoncallback=1";
 		var ajaxGet = new XMLHttpRequest();
 		ajaxGet.onreadystatechange = function() {
 			if (ajaxGet.readyState === 4 && ajaxGet.status === 200) {

@@ -8,7 +8,11 @@ var animals = [
 	"Elk",
 	"Dragon",
 	"Wildcat",
-	"Leopard"
+	"Leopard",
+	"panda",
+	"bird",
+	"raven",
+	"bull"
 ];
 
 var shapes = [
@@ -17,7 +21,10 @@ var shapes = [
 	"Circle",
 	"Diamond",
 	"Prism",
-	"Cube"
+	"Cube",
+	"square",
+	"wave",
+	"spiral"
 ];
 
 var otherStuff = [
@@ -25,7 +32,11 @@ var otherStuff = [
 	"Fossils",
 	"Sun",
 	"Palms",
-	"Coast"
+	"Coast",
+	"mirror",
+	"tomb",
+	"grave"
 ];
-
-module.exports = {animals: animals, shapes: shapes, otherStuff: otherStuff};
+if (typeof module !== "undefined") {
+	module.exports = {animals: animals, shapes: shapes, otherStuff: otherStuff};
+}
