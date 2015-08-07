@@ -1,6 +1,5 @@
 var animals = [
 	"Wolf",
-	"Cat",
 	"Tiger",
 	"Bear",
 	"Penguin",
