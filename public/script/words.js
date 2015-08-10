@@ -23,7 +23,8 @@ var shapes = [
 	"Cube",
 	"square",
 	"wave",
-	"spiral"
+	"spiral",
+	"pentagram"
 ];
 
 var otherStuff = [
