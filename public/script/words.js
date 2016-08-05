@@ -21,7 +21,6 @@ var shapes = [
 	"Diamond",
 	"Prism",
 	"Cube",
-	"square",
 	"wave",
 	"spiral",
 	"pentagram"
